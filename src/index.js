@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+//23:31
 
 // Set the path for EJS templates
 const templatePath = path.join(__dirname, '../templates');
@@ -12,10 +13,8 @@ app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", templatePath);
 
-// Start the server
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
-});
+
+
 
 // Route for the home page
 app.get('/', (req, res) => {
@@ -25,4 +24,22 @@ app.get('/', (req, res) => {
 // Route for the signup page
 app.get('/signup', (req, res) => {
     res.render("signup");
+});
+
+app.post("/login",async (req,res)=>{
+    res.render("signup")
+});
+
+app.post("/signup",async(req,res)=>{
+    const data={
+       name:req.body.name,
+       password:req.body.password
+    }
+
+}
+);
+
+// Start the server
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
 });

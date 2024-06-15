@@ -8,3 +8,18 @@ console.log("mongodb connected");
     console.log("failed to connect");
 
 })
+
+const Loginschema = new mongoose.Schema({
+        name:{
+            type:String,
+            required:true
+        },
+        password:{
+            type:String,
+            required:true
+        }
+})
+
+const collection = new mongoose.model("Collection1",LoginSchema)
+
+module.exports=collection
