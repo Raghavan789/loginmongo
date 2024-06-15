@@ -20,6 +20,6 @@ const Loginschema = new mongoose.Schema({
         }
 })
 
-const collection = new mongoose.model("Collection1",LoginSchema)
+const collection = new mongoose.model("Collection1",Loginschema)
 
 module.exports=collection
